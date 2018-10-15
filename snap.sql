@@ -1,4 +1,4 @@
-ALTER jjain2 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER DATABASE jjain2 CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 DROP TABLE IF EXISTS author;
 DROP TABLE IF EXISTS tag;
 DROP TABLE IF EXISTS article;
@@ -14,14 +14,14 @@ CREATE TABLE author (
 	UNIQUE(authorEmail),
 	UNIQUE(authorUsername),
 	PRIMARY KEY(authorId)
-)
+);
 
 CREATE TABLE tag (
 	tagId BINARY(16) NOT NULL,
 	tagName VARCHAR(32) NOT NULL,
 	UNIQUE(tagId),
 	PRIMARY KEY (tagId, tagName)
-)
+);
 
 CREATE TABLE article (
 	articleId BINARY(16) NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE article (
 	UNIQUE(articleId),
 	INDEX(articleAuthorId),
 	FOREIGN KEY(articleAuthorId) REFERENCES author(authorId)
-)
+);
 
 CREATE TABLE articleTag(
 	articleTagArticleId BINARY(16),
