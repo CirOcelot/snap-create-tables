@@ -43,4 +43,10 @@ CREATE TABLE articleTag(
 	FOREIGN KEY (articleTagTagId) REFERENCES tag(tagId),
 	FOREIGN KEY(articleTagArticleId) REFERENCES article(articleId),
 	PRIMARY KEY (articleTagArticleId, articleTagTagId)
-)
+);
+
+INSERT INTO author(authorId, authorAvatarUrl, authorEmail, authorHash, authorUsername)
+VALUES (8a915261 - d005 - 43cf - 867e - ff24de15e991,
+		  "https://stackoverflow.com/questions/8393117/how-many-characters-should-i-reserve-in-my-database-for-storing-sha512-hash",
+		  "jjain2@cnm.edu", "2601e579d5f6d832722492b87ae8be56980857a32fabb3bf97a6597bab0c7852868d70999029faebe0a1f962503224c48", "jjain2");
+
