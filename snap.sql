@@ -27,9 +27,9 @@ CREATE TABLE tag (
 CREATE TABLE article (
 	articleId BINARY(16) NOT NULL,
 	articleAuthorId BINARY(16) NOT NULL,
-	articleContent VARCHAR(40000) NOT NULL,
-	articleDate DATETIME(8) NOT NULL,
-	articleImage VARCHAR(128),
+	articleContent BLOB(40000) NOT NULL,
+	articleDate DATETIME(6) NOT NULL,
+	articleImage VARCHAR(255),
 	INDEX(articleAuthorId),
 	FOREIGN KEY(articleAuthorId) REFERENCES author(authorId),
 	PRIMARY KEY (articleId)
